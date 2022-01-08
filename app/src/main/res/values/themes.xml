@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.BusinessWatcher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/primaryDarkColor</item>
+        <item name="colorPrimaryVariant">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/secondaryLightColor</item>
+
+        <item name="colorSecondary">@color/secondaryDarkColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryColor</item>
+        <item name="colorOnSecondary">@color/primaryLightColor</item>
+
+        <item name="colorOnSurface">@color/secondaryLightColor</item>
+        <item name="colorControlNormal">@color/secondaryColor</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">@color/secondaryDarkColor</item>
+    </style>
+</resources>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    android:paddingBottom="80dp">
+
+    <TextView
+        android:id="@+id/company_creation_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/create_company_title"
+        android:textColor="@color/secondaryDarkColor"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:paddingVertical="30dp"/>
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="20dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        android:background="@color/primaryColor"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_name_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/company_creation_title"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="2dp"
+        android:hint="@string/name"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/group_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/company_name_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="2dp"
+        android:hint="@string/group"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/type_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/group_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="2dp"
+        android:hint="@string/type"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/city_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/type_text_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PC_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/city"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PC_text_field"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/city_text_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/city_text_field"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/postal_code"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/adress_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/city_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:hint="@string/address"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/turnover_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/adress_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/turnover"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryDarkColor"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_description_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/turnover_text_field"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:hint="@string/description"
+        android:textColorHint="@color/secondaryColor"
+        app:hintTextColor="@color/secondaryColor"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/secondaryDarkColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/validate_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_baseline_done_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>

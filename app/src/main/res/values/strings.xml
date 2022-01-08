@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BusinessWatcher</string>
+
+    <string name="search">search</string>
+
+    <string name="type">Business sectors</string>
+    <string name="import_Json">Json import</string>
+    <string name="export_Json">Json export</string>
+
+    <string name="group">Group</string>
+    <string name="company">Company</string>
+
+
+    <string name="create_group_title">Add a new group</string>
+    <string name="create_company_title">Add a new company</string>
+    <string name="name">Name</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="postal_code">Postal code</string>
+    <string name="turnover">Turnover</string>
+    <string name="description">Description</string>
+    <string name="import_logo">Import logo</string>
+
+
+</resources>
