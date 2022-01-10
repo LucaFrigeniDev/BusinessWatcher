@@ -52,6 +52,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor" />
@@ -71,6 +72,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
         <AutoCompleteTextView
+            android:id="@+id/group_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor"
@@ -91,6 +93,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
         <AutoCompleteTextView
+            android:id="@+id/type_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor"
@@ -113,6 +116,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/city_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor" />
@@ -133,13 +137,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PC_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/adress_text_field"
+        android:id="@+id/address_text_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/city_text_field"
@@ -152,6 +157,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/address_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor" />
@@ -161,7 +167,7 @@
         android:id="@+id/turnover_text_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/adress_text_field"
+        app:layout_constraintTop_toBottomOf="@+id/address_text_field"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="30dp"
         android:hint="@string/turnover"
@@ -171,6 +177,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/turnover_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryDarkColor"
@@ -191,6 +198,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description_editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/secondaryDarkColor" />
