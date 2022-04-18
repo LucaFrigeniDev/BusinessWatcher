@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_baseline_place_24"/>
+
+    <ImageView
+        android:id="@+id/marker_logo"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginBottom="3dp"
+        android:layout_gravity="center" />
+</merge>

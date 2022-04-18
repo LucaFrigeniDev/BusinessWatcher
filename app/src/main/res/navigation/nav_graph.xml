@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapsFragment">
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.MapsFragment"
+        android:label="MapsFragment"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapsFragment_to_listCompanyFragment"
+            app:destination="@id/listCompanyFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_companyDetailFragment"
+            app:destination="@id/companyDetailFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_businessSectorFragment"
+            app:destination="@id/businessSectorFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_groupCreationFragment"
+            app:destination="@id/groupCreationFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_companyCreationFragment"
+            app:destination="@id/companyCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCompanyFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.ListCompanyFragment"
+        android:label="ListCompanyFragment"
+        tools:layout="@layout/fragment_list_company">
+        <action
+            android:id="@+id/action_listCompanyFragment_to_listGroupFragment"
+            app:destination="@id/listGroupFragment" />
+        <action
+            android:id="@+id/action_listCompanyFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_listCompanyFragment_to_companyDetailFragment"
+            app:destination="@id/companyDetailFragment" />
+        <action
+            android:id="@+id/action_listCompanyFragment_to_businessSectorFragment"
+            app:destination="@id/businessSectorFragment" />
+        <action
+            android:id="@+id/action_listCompanyFragment_to_groupCreationFragment"
+            app:destination="@id/groupCreationFragment" />
+        <action
+            android:id="@+id/action_listCompanyFragment_to_companyCreationFragment"
+            app:destination="@id/companyCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listGroupFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.ListGroupFragment"
+        android:label="ListGroupFragment"
+        tools:layout="@layout/fragment_list_group">
+        <action
+            android:id="@+id/action_listGroupFragment_to_listCompanyFragment"
+            app:destination="@id/listCompanyFragment" />
+        <action
+            android:id="@+id/action_listGroupFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_listGroupFragment_to_groupDetailFragment"
+            app:destination="@id/groupDetailFragment" />
+        <action
+            android:id="@+id/action_listGroupFragment_to_businessSectorFragment"
+            app:destination="@id/businessSectorFragment" />
+        <action
+            android:id="@+id/action_listGroupFragment_to_groupCreationFragment"
+            app:destination="@id/groupCreationFragment" />
+        <action
+            android:id="@+id/action_listGroupFragment_to_companyCreationFragment"
+            app:destination="@id/companyCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyDetailFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.CompanyDetailFragment"
+        android:label="CompanyDetailFragment"
+        tools:layout="@layout/fragment_detail_company">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_companyDetailFragment_to_companyCreationFragment"
+            app:destination="@id/companyCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupDetailFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.GroupDetailFragment"
+        android:label="GroupDetailFragment"
+        tools:layout="@layout/fragment_detail_group">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_groupDetailFragment_to_groupCreationFragment"
+            app:destination="@id/groupCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessSectorFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.BusinessSectorFragment"
+        android:label="BusinessSectorFragment"
+        tools:layout="@layout/fragment_business_sector"/>
+    <fragment
+        android:id="@+id/groupCreationFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.GroupCreationFragment"
+        android:label="GroupCreationFragment"
+        tools:layout="@layout/fragment_group_creation"/>
+    <fragment
+        android:id="@+id/companyCreationFragment"
+        android:name="com.example.businesswatcher.project.ui.fragment.CompanyCreationFragment"
+        android:label="CompanyCreationFragment"
+        tools:layout="@layout/fragment_company_creation"/>
+</navigation>

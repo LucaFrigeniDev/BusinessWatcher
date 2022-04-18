@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.businesswatcher">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,17 +20,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
 
-        <activity android:name=".project.ui.activity.MainActivity"
+        <activity
+            android:name=".project.ui.MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".project.ui.activity.GroupCreationActivity"/>
-        <activity android:name=".project.ui.activity.CompanyCreationActivity"/>
-        <activity android:name=".project.ui.activity.TypeActivity"/>
-
-        </application>
+    </application>
 </manifest>

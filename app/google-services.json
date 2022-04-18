@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "237634438733",
+    "project_id": "businesswatcher",
+    "storage_bucket": "businesswatcher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237634438733:android:eb951b1e3f055d6fcf7e04",
+        "android_client_info": {
+          "package_name": "com.example.businesswatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237634438733-f4hbue1f1quniimkr843m6lp3l96pskr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.businesswatcher",
+            "certificate_hash": "9fa35b842bf451944d377a8d7f4ea656fb0d9fda"
+          }
+        },
+        {
+          "client_id": "237634438733-2knmsn1cv8bdjocphnihvivfea174hs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMios787zX39tlR8CE1h4HPJ2te-pa3cU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237634438733-2knmsn1cv8bdjocphnihvivfea174hs6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

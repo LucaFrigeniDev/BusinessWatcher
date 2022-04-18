@@ -1,53 +1,50 @@
 package com.example.businesswatcher.project.ui.fragment
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.businesswatcher.R
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.example.businesswatcher.databinding.FragmentMapBinding
+import com.example.businesswatcher.project.ui.MainActivity
+import com.example.businesswatcher.project.ui.viewmodel.MapsViewModel
+import com.example.businesswatcher.project.utils.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.gms.maps.model.MarkerOptions
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MapsFragment : Fragment(), OnMapReadyCallback {
 
+    private var _bind: FragmentMapBinding? = null
+    private val bind get() = _bind!!
+
+    private val viewModel: MapsViewModel by viewModels()
+
     private lateinit var map: GoogleMap
-    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
-    var locationPermissionGranted: Boolean = false
-
-    private val DEFAULT_ZOOM = 8
-    private val PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_map, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setViewModel()
-        setLocationFAB(view)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        displayFragment = "MapsFragment"
+        _bind = DataBindingUtil.inflate(inflater, R.layout.fragment_map, container, false)
+        return bind.root
     }
 
     override fun onResume() {
         super.onResume()
-        fusedLocationProviderClient =
-            LocationServices.getFusedLocationProviderClient(requireActivity())
         val mapFragment =
             childFragmentManager.findFragmentById(R.id.google_maps_fragment) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
@@ -55,49 +52,72 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        !map.uiSettings.isMapToolbarEnabled
-        !map.uiSettings.isMyLocationButtonEnabled
+        map.uiSettings.isMapToolbarEnabled
+        map.uiSettings.isMyLocationButtonEnabled
 
-        getDeviceLocation()
+        setMap()
+        locationFAB()
+        setMarkers()
+        filter()
+        clearFilter()
     }
 
-    fun setViewModel() {}
-
-    fun setLocationFAB(view: View) {
-        view.findViewById<FloatingActionButton>(R.id.location_button).setOnClickListener {
-            if (isLocationAllowed()) getDeviceLocation()
-            else askLocationPermission()
+    private fun locationFAB() = bind.locationFAB.setOnClickListener {
+        when (isLocationAllowed(requireContext())) {
+            true -> setMap()
+            false -> askLocationPermission(requireActivity())
         }
     }
 
+    private fun setMap() {
+        getDeviceLocation(requireActivity())
+        if (userLocation != null) {
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation!!, 8.0F))
+        }
+    }
 
-    // BUG if you deny location access
-    fun getDeviceLocation() {
-        if (isLocationAllowed()) {
-            fusedLocationProviderClient.lastLocation.addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful && task.result != null) {
-                    map.moveCamera(
-                        CameraUpdateFactory.newLatLngZoom(
-                            LatLng(task.result.latitude, task.result.longitude),
-                            DEFAULT_ZOOM.toFloat()
-                        )
-                    )
-                } else Toast.makeText(this.context, "aa", Toast.LENGTH_SHORT).show()
+    private fun filter() = (activity as MainActivity).filterBtn.setOnClickListener {
+        (activity as MainActivity).setFilters()
+        (activity as MainActivity).hideBottomSheet()
+        setMarkers()
+    }
+
+    private fun clearFilter() = (activity as MainActivity).clearBtn.setOnClickListener {
+        (activity as MainActivity).clear()
+        setMarkers()
+    }
+
+    private fun setMarkers() {
+        viewModel.getBusinessSectorsWithCompanies().observe(viewLifecycleOwner) {
+            map.clear()
+            var markerTitle: String
+            var markerColor: String
+
+            for (businessSectorCompany in it) {
+                for (company in businessSectorCompany.companies) {
+                    viewModel.getGroupName(company.groupId, company.name)
+                        .observe(viewLifecycleOwner) { title ->
+                            markerColor = businessSectorCompany.businessSector.color
+                            markerTitle = title
+
+                            map.addMarker(
+                                MarkerOptions()
+                                    .title(markerTitle)
+                                    .position(LatLng(company.latitude, company.longitude))
+                                    .snippet(company.city)
+                                    .icon(
+                                        getMarkerIcon(
+                                            bind.root as ViewGroup, markerColor, company.logo
+                                        )
+                                    )
+                            )!!.tag = company.id
+                        }
+                }
             }
-        } else askLocationPermission()
+            onMarkerClick()
+        }
     }
 
-    fun isLocationAllowed(): Boolean =
-        ContextCompat.checkSelfPermission(
-            this.requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION
-        ) == PackageManager.PERMISSION_GRANTED
-
-
-    fun askLocationPermission() {
-        ActivityCompat.requestPermissions(
-            this.requireActivity(),
-            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION
-        )
-    }
+    private fun onMarkerClick() =
+        map.setOnInfoWindowClickListener { marker -> mapToCompanyDetail(marker.tag as Long) }
 }

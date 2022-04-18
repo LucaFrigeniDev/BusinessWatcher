@@ -1,0 +1,90 @@
+<resources>
+
+    <string name="sector">Secteurs d\'activité</string>
+    <string name="group">Groupe</string>
+    <string name="independent_chip">Indépendant</string>
+
+    <string name="euro_turnover">CA : %1$s €</string>
+    <string name="euro">%1$s €</string>
+
+    <string name="name">Nom</string>
+    <string name="description">Description</string>
+    <string name="import_logo">Importer un logo</string>
+    <string name="error_empty_fields">Renseignez tous les champs</string>
+    <string name="error_pick_file">vous n\'avez pas sélectionné de photo</string>
+
+    //MainActivity
+    <string name="error_no_sector">Vous devez d\'abord ajouter des secteurs d\'activité</string>
+    <string name="error_geolocation">la geolocalisation a échoué</string>
+    <string name="add_group">ajouter un groupe</string>
+    <string name="add_company">ajouter une société</string>
+
+    //Drawer
+    <string name="currency">Devise</string>
+    <string name="import_Json">Json import</string>
+    <string name="export_Json">Json export</string>
+
+    //BottomSheet
+    <string name="filter_title">Filtre</string>
+    <string name="filter_btn">appliquer les filtres</string>
+    <string name="clear_btn">réinitialiser les filtres</string>
+    <string name="company_filter_et">filtrer par nom de société</string>
+    <string name="groups_chips_title">groupes</string>
+    <string name="sectors_chips_title">Secteurs d\'activité</string>
+
+    //FragBusinessSector
+    <string name="empty_sector_list">Vous n\'avez pas encore enregistré de secteurs d\'activité</string>
+    <string name="sector_turnover">CA du secteur : %1$s €</string>
+    <string name="sector_companies">%1$s sociétés dans le secteur</string>
+    <string name="error_full_sector">Vous ne pouvez plus ajouter de secteurs d\'activité</string>
+    <string name="add_sector_dialog_title">Ajouter un nouveau secteur d\'activité</string>
+    <string name="add_sector_dialog_message">Renseignez le nom du secteur d\'activité</string>
+    <string name="add_sector_dialog_positive_btn">Ajouter</string>
+    <string name="add_sector_dialog_negative_btn">Annuler</string>
+    <string name="sector_name_error">Renseignez le nom dans le champ</string>
+
+    //FragMap
+
+    //FragListCompany
+    <string name="empty_company_list">Aucune société trouvé</string>
+    <string name="sort_turnover">Trier par CA</string>
+    <string name="sort_nearest">Trier par localisation</string>
+    <string name="sort_group">Trier par groupe</string>
+    <string name="sort_sector">Trier par secteur</string>
+
+    //FragCreateCompany
+    <string name="create_company_title">Ajouter une société</string>
+    <string name="city">Ville</string>
+    <string name="address">Adresse</string>
+    <string name="postal_code">Code postal</string>
+    <string name="turnover">CA</string>
+    <string name="error_address">vérifiez l\'adresse</string>
+    <string name="logo_alert_dialog_text">Ajouter un logo</string>
+
+    //FragListGroup
+    <string name="empty_group_list">Aucun groupe trouvé</string>
+    <string name="group_companies">%1$s sociétés</string>
+
+    //FragCreateGroup
+    <string name="create_group_title">Ajouter un groupe</string>
+
+    //FragDetailCompany
+    <string name="location">%1$s, %2$s, %3$s</string>
+    <string name="customer_title">Clients</string>
+    <string name="add_customer">Ajouter un client</string>
+    <string name="add_customer_dialog_message">Ajouter un client</string>
+    <string name="empty_customer_list">Aucun client renseigné</string>
+
+    //FragDetailGroup
+    <string name="sector_presence">présence sur le secteur</string>
+    <string name="companies_title">sociétés</string>
+    <string name="companies">%1$s sociétés</string>
+    <string name="rank">rang %1$s</string>
+    <string name="share">%1$s parts</string>
+
+    //Detail
+    <string name="about">à propos</string>
+    <string name="description_dialog_message">Mettez à jour la déscription</string>
+    <string name="description_dialog_positive_btn">Mettre à jour</string>
+    <string name="description_dialog_negative_btn">Annuler</string>
+</resources>

@@ -1,75 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer_layout">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:id="@+id/drawer_layout"
+        tools:context=".project.ui.MainActivity">
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="45dp"
-            android:background="@color/primaryLightColor" />
+            android:fitsSystemWindows="true">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            app:tabMode="fixed"
-            android:background="@color/primaryColor"
-            app:tabIconTint="@color/tab_layout_color_selector"
-            app:tabIndicatorColor="@color/secondaryDarkColor">
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph"
+                android:background="@color/primaryLightColor" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/map_tab"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                app:tabMode="fixed"
+                android:background="@color/primaryColor"
+                app:tabIconTint="@color/tab_layout_color_selector"
+                app:tabIndicatorColor="@color/secondaryDarkColor">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/map_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_baseline_map_24" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/list_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_baseline_list_24" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottom_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fitsSystemWindows="false"
+                android:backgroundTint="@color/primaryColor"
+                app:navigationIcon="@drawable/ic_baseline_menu_24"
+                app:menu="@menu/bottom_app_bar_menu" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/ic_baseline_map_24" />
+                app:layout_anchor="@id/bottom_app_bar"
+                app:srcCompat="@drawable/ic_baseline_add_24" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/list_tab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_baseline_list_24" />
-        </com.google.android.material.tabs.TabLayout>
+        <include layout="@layout/bottom_sheet" />
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottom_app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:fitsSystemWindows="true"
-            android:backgroundTint="@color/primaryColor"
-            app:navigationIcon="@drawable/ic_baseline_menu_24"
-            app:menu="@menu/bottom_app_bar_menu" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_button"
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottom_app_bar"
-            app:srcCompat="@drawable/ic_baseline_add_24" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <include layout="@layout/bottom_sheet" />
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/secondaryDarkColor"
-        app:headerLayout="@layout/drawer_layout_header"
-        app:menu="@menu/navigation_drawer_menu"
-        app:itemTextColor="@color/primaryColor"
-        android:fitsSystemWindows="true"
-        app:behavior_hideable="true" />
-</androidx.drawerlayout.widget.DrawerLayout>
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/secondaryDarkColor"
+            app:headerLayout="@layout/drawer_layout_header"
+            app:menu="@menu/navigation_drawer_menu"
+            app:itemTextColor="@color/primaryColor"
+            android:fitsSystemWindows="true"
+            app:behavior_hideable="true" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

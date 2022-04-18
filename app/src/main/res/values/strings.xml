@@ -1,27 +1,102 @@
 <resources>
-    <string name="app_name">BusinessWatcher</string>
+    <string name="app_name" translatable="false">BusinessWatcher</string>
 
-    <string name="search">search</string>
+    <string name="search" translatable="false">search</string>
 
-    <string name="type">Business sectors</string>
+    //TypeActivity
+    <string name="color_1" translatable="false">#f54242</string>
+    <string name="color_2" translatable="false">#ff8636</string>
+    <string name="color_3" translatable="false">#8ce66e</string>
+    <string name="color_4" translatable="false">#6ebee6</string>
+    <string name="color_5" translatable="false">#ffc830</string>
+
+
+    <string name="sector">Business sectors</string>
+    <string name="group">Group</string>
+    <string name="independent_chip">Independent</string>
+
+
+    <string name="euro_turnover">Turnover : %1$s €</string>
+    <string name="euro">%1$s €</string>
+
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="import_logo">Import logo</string>
+    <string name="error_empty_fields">fill all the blanks</string>
+    <string name="error_pick_file">you didn\'t pick a photo</string>
+
+    //MainActivity
+    <string name="error_no_sector">you have to create a business sector first</string>
+    <string name="error_geolocation">geolocation failed</string>
+    <string name="add_group">add a group</string>
+    <string name="add_company">add a company</string>
+
+    //Drawer
+    <string name="currency">Currency</string>
     <string name="import_Json">Json import</string>
     <string name="export_Json">Json export</string>
 
-    <string name="group">Group</string>
-    <string name="company">Company</string>
+    //BottomSheet
+    <string name="filter_title">Filter</string>
+    <string name="filter_btn">apply filter</string>
+    <string name="clear_btn">clear filter</string>
+    <string name="company_filter_et">filter by company name</string>
+    <string name="groups_chips_title">groups</string>
+    <string name="sectors_chips_title">business sectors</string>
 
+    //FragBusinessSector
+    <string name="empty_sector_list">There is no business sectors yet</string>
+    <string name="sector_turnover">Business sector turnover : %1$s €</string>
+    <string name="sector_companies">%1$s Companies in the sector</string>
+    <string name="error_full_sector">you can\'t create business sectors anymore</string>
+    <string name="add_sector_dialog_title">Add a new business sector</string>
+    <string name="add_sector_dialog_message">Enter the name of the business sector</string>
+    <string name="add_sector_dialog_positive_btn">Add</string>
+    <string name="add_sector_dialog_negative_btn">Cancel</string>
+    <string name="sector_name_error">enter the name in the field</string>
 
-    <string name="create_group_title">Add a new group</string>
+    //FragMap
+
+    //FragListCompany
+    <string name="empty_company_list">We didn\'t find any company</string>
+    <string name="sort_turnover">Sort by turnover</string>
+    <string name="sort_nearest">Sort by location</string>
+    <string name="sort_group">Sort by group</string>
+    <string name="sort_sector">Sort by sector</string>
+
+    //FragCreateCompany
     <string name="create_company_title">Add a new company</string>
-    <string name="name">Name</string>
     <string name="city">City</string>
     <string name="address">Address</string>
     <string name="postal_code">Postal code</string>
     <string name="turnover">Turnover</string>
-    <string name="description">Description</string>
-    <string name="import_logo">Import logo</string>
+    <string name="error_address">check the address fields</string>
+    <string name="logo_alert_dialog_text">Add a logo</string>
 
-    <string name="empty">The list is empty</string>
+    //FragListGroup
+    <string name="empty_group_list">We didn\'t find any group</string>
+    <string name="group_companies">%1$s companies</string>
 
+    //FragCreateGroup
+    <string name="create_group_title">Add a new group</string>
 
+    //FragDetailCompany
+    <string name="location">%1$s, %2$s, %3$s</string>
+    <string name="customer_title">Customers</string>
+    <string name="add_customer">Add a customer</string>
+    <string name="add_customer_dialog_message">Create a customer</string>
+    <string name="empty_customer_list">There is no customers yet</string>
+
+    //FragDetailGroup
+    <string name="sector_presence">sector presence</string>
+    <string name="companies_title">companies</string>
+    <string name="companies">%1$s companies</string>
+    <string name="rank">rank %1$s</string>
+    <string name="share">%1$s shares</string>
+
+    //Detail
+    <string name="about">about it</string>
+    <string name="description_dialog_message">Update the description</string>
+    <string name="description_dialog_positive_btn">Update</string>
+    <string name="description_dialog_negative_btn">Cancel</string>
 </resources>

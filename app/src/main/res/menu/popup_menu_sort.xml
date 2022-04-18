@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/turnover_sort"
+        android:title="@string/sort_turnover" />
+    <item
+        android:id="@+id/group_sort"
+        android:title="@string/sort_group" />
+    <item
+        android:id="@+id/business_sector_sort"
+        android:title="@string/sort_sector" />
+    <item
+        android:id="@+id/distance_sort"
+        android:title="@string/sort_nearest" />
+</menu>

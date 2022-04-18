@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/type"
-        android:title="@string/type"
-        app:showAsAction="always"/>
+        android:id="@+id/business_sector"
+        android:title="@string/sector"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/currency"
+        android:title="@string/currency"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/export_Json"
         android:title="@string/export_Json"

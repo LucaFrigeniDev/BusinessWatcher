@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sector_card"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    style="@style/Widget.Material3.CardView.Filled"
+    app:cardBackgroundColor="@color/secondaryDarkColor"
+    app:layout_constraintEnd_toEndOf="@+id/companies_card"
+    app:layout_constraintStart_toStartOf="@+id/turnover_card"
+    app:layout_constraintTop_toBottomOf="@+id/title_sector">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/business_sector_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:textColor="@color/primaryColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/turnover_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_circle_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/business_sector_name"
+            app:tint="@color/primaryColor" />
+
+        <ImageView
+            android:id="@+id/turnover_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_attach_money_24"
+            app:layout_constraintBottom_toBottomOf="@id/turnover_image"
+            app:layout_constraintEnd_toEndOf="@id/turnover_image"
+            app:layout_constraintStart_toStartOf="@id/turnover_image"
+            app:layout_constraintTop_toTopOf="@id/turnover_image"
+            app:tint="@color/secondaryLightColor" />
+
+        <TextView
+            android:id="@+id/turnover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/primaryColor"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/turnover_image"
+            app:layout_constraintStart_toEndOf="@id/turnover_image"
+            app:layout_constraintTop_toTopOf="@id/turnover_image" />
+
+        <ImageView
+            android:id="@+id/companies_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_baseline_factory_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/turnover_image"
+            app:tint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/companies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/primaryColor"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/companies_image"
+            app:layout_constraintStart_toEndOf="@+id/companies_image"
+            app:layout_constraintTop_toTopOf="@id/companies_image" />
+
+        <ImageView
+            android:id="@+id/rank_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_baseline_tag_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companies_image"
+            app:tint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/primaryColor"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/rank_image"
+            app:layout_constraintStart_toEndOf="@+id/rank_image"
+            app:layout_constraintTop_toTopOf="@id/rank_image" />
+
+        <ImageView
+            android:id="@+id/percent_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_baseline_percent_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rank_image"
+            app:tint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/primaryColor"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/percent_image"
+            app:layout_constraintStart_toEndOf="@+id/percent_image"
+            app:layout_constraintTop_toTopOf="@id/percent_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
