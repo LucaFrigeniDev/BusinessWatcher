@@ -25,3 +25,17 @@ https://user-images.githubusercontent.com/97344859/163845478-1c17e9d1-2c03-45ea-
 ## filter
 
 https://user-images.githubusercontent.com/97344859/163849293-bf10a62e-7edc-4ce7-9e27-65d5a70257f7.mp4
+
+
+## Next steps :
+### New functionnalities :
+- Import/export data
+- Change the currency
+- Turnover and group quick update
+
+### Points of improvement :
+- Tablet UI
+- Company creation Fragment
+- The display of the turnover
+- Design
+- Image import (loader)
